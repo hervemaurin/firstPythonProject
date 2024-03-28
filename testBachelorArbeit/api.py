@@ -13,7 +13,7 @@ openai.api_key = 'key-value'
 
 # Fonction pour interroger Elasticsearch
 def search(query):
-    res = es.search(index="indexBachelorarbeit", body={"query": {"match": {"content": query}}})
+    res = es.search(index="index-bachelorarbeit-test", body={"query": {"match": {"content": query}}})
     hits = res['hits']['hits']
     return [hit['_source']['content'] for hit in hits]
 
