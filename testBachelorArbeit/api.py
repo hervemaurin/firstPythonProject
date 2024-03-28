@@ -5,7 +5,8 @@ import openai
 app = Flask(__name__)
 
 # Connexion à Elasticsearch
-es = Elasticsearch(['http://localhost:9200'])
+es = Elasticsearch('http://localhost:9200',
+                   basic_auth=("elastic", "#"))
 
 # Initialisation de l'API OpenAI
 openai.api_key = 'key-value'
